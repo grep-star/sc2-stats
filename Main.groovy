@@ -7,7 +7,8 @@ import groovy.cli.picocli.OptionAccessor
         @GrabExclude('org.codehaus.groovy:groovy-xml'),
         @GrabExclude('org.codehaus.groovy:groovy-json'),
         @Grab('com.fasterxml.jackson.core:jackson-core:2.8.2'),
-        @Grab('com.fasterxml.jackson.core:jackson-databind:2.8.2')
+        @Grab('com.fasterxml.jackson.core:jackson-databind:2.8.2'),
+        @Grab('org.apache.commons:commons-csv:1.6')
 ])
 
 final CliBuilder cli = new CliBuilder()

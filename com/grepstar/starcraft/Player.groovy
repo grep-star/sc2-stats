@@ -1,9 +1,17 @@
 package com.grepstar.starcraft
 
-class Player {
+class Player implements Comparable<Player> {
 
     int maxMmr
-    List<LadderRank> ranks = []
+    int id
+    Region region
+    List<LadderRank> ranks
+
+    Player(LadderRank rank) {
+        setId(rank.playerId)
+        setRegion(rank.region)
+        setRanks([rank])
+    }
 
     int getMaxMmr() {
         if (maxMmr == 0) {
@@ -12,6 +20,11 @@ class Player {
             }.max()
         }
         maxMmr
+    }
+
+    @Override
+    int compareTo(Player o) {
+        o.getMaxMmr() <=> getMaxMmr()
     }
 
 }
